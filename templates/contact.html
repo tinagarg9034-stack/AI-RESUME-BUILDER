@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h1>Contact Us</h1>
+
+<form method="post">
+    <input type="text" name="name" placeholder="Your Name"><br><br>
+
+    <input type="email" name="email" placeholder="Your Email"><br><br>
+
+    <textarea name="message" placeholder="Your Message"></textarea><br><br>
+
+    <button type="submit">Send</button>
+</form>
+
+</body>
+</html>

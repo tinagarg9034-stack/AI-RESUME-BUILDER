@@ -4,7 +4,7 @@
     <title>View Resume</title>
 </head>
 <body>
-
+{% include "navbar.html" %}
 <h1>{{ resume.name }}</h1>
 
 <img src="{{ url_for('static', filename='uploads/' + resume.photo) }}"

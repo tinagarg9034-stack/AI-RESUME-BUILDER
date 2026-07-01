@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request,session,make_response,redirect
-from models import db, User , Resume
+from models import db, User , Resume , Contact
 from flask import make_response
 from reportlab.pdfgen import canvas
 import io
@@ -209,5 +209,35 @@ def delete_resume(id):
 
     return redirect("/view")
 
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        contact = Contact(
+            name=request.form["name"],
+            email=request.form["email"],
+            message=request.form["message"]
+        )
+
+        db.session.add(contact)
+        db.session.commit()
+
+        return "Message sent successfully!"
+
+    return render_template("contact.html")
+
+@app.route("/messages")
+def messages():
+    messages = Contact.query.all()
+    return render_template("messages.html", messages=messages)
+
+@app.route("/delete-message/<int:id>")
+def delete_message(id):
+    message = Contact.query.get_or_404(id)
+
+    db.session.delete(message)
+    db.session.commit()
+
+    return redirect("/messages")
+       
 if __name__ == "__main__":
     app.run(debug=True)
