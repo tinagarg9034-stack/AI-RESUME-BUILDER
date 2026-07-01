@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Preview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="resume">
+
+    <h1>{{ name }}</h1>
+
+    <img src="{{ url_for('static', filename='uploads/' + photo) }}"
+         width="150"
+         height="150"
+         style="border-radius:50%;">
+
+    <p><b>Email:</b> {{ email }}</p>
+    <p><b>Phone:</b> {{ phone }}</p>
+
+    <hr>
+
+    <h2>Skills</h2>
+    <p>{{ skills }}</p>
+
+    <h2>Education</h2>
+    <p>{{ education }}</p>
+
+    <h2>Experience</h2>
+    <p>{{ experience }}</p>
+
+    <a href="/download">
+        <button>Download PDF</button>
+    </a>
+    <a href="/edit">
+    <button>Edit Resume</button>
+    </a>
+
+</div>
+
+</body>
+</html>

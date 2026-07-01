@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Resume</title>
+</head>
+<body>
+
+<h1>{{ resume.name }}</h1>
+
+<img src="{{ url_for('static', filename='uploads/' + resume.photo) }}"
+     width="150"
+     height="150">
+
+<p><b>Email:</b> {{ resume.email }}</p>
+<p><b>Phone:</b> {{ resume.phone }}</p>
+
+<h2>Skills</h2>
+<p>{{ resume.skills }}</p>
+
+<h2>Education</h2>
+<p>{{ resume.education }}</p>
+
+<h2>Experience</h2>
+<p>{{ resume.experience }}</p>
+
+<a href="/resumes">
+    <button>Back to Dashboard</button>
+</a>
+
+</body>
+</html>

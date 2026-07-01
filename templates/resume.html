@@ -11,7 +11,7 @@
 
 <h2>Resume Details</h2>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
 
 <input type="text" name="name" placeholder="Full Name" required>
 
@@ -24,6 +24,10 @@
 <textarea name="education" placeholder="Education"></textarea>
 
 <textarea name="experience" placeholder="Experience"></textarea>
+
+<label>Profile Photo</label>
+
+<input type="file" name="photo" accept="image/*">
 
 <button type="submit">Generate Resume</button>
 

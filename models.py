@@ -7,3 +7,14 @@ class User(db.Model):
     fullname = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    
+
+class Resume(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    email = db.Column(db.String(100),unique=True,nullable=False)
+    phone = db.Column(db.String(20))
+    skills = db.Column(db.Text)
+    education = db.Column(db.Text)
+    experience = db.Column(db.Text) 
+    photo = db.Column(db.String(100))

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Resumes</title>
+</head>
+<body>
+
+<h2>All Resumes</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for resume in resumes %}
+    <tr>
+        <td>{{ resume.name }}</td>
+        <td>{{ resume.email }}</td>
+        <td>{{ resume.phone }}</td>
+        <td>
+            <a href="/view/{{ resume.id }}">View</a> |
+            <a href="/edit/{{ resume.id }}">Edit</a> |
+            <a href="/delete/{{ resume.id }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
